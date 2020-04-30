@@ -1,13 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
   <meta charset="utf-8">
-  <title>Flightscheduler</title>
+  <title>FlightScheduler</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js'></script>
+  <style>
+    .new-class {
+      font-size: 32px;
+    }
+    .other-class {
+      font-size: 72px;
+    }
+    .bigger-class {
+      font-size: 120px;
+    }
+    .red-class {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <!-- <app-root></app-root> -->
+  <!-- directive class for specific conditional -->
+  <h1 class='new-class' ng-class="{'other-class': name=='besar', 'bigger-class': font==120, 'red-class': color=='merah'}">
+    Hellow, 
+    <span ng-if='name'>{{ name }}</span>
+    <span ng-if='!name'>World</span>
+  </h1>
+  <input type='text' ng-model='name' placeholder='input name' />
+  <br/>
+  <input type='text' ng-model='font' placeholder='input size font' />
+  <br/>
+  <input type='text' ng-model='color' placeholder='input color font' />
 </body>
 </html>
